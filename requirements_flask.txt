@@ -1,0 +1,14 @@
+Flask
+ultralytics
+opencv-python
+mediapipe
+tensorflow
+numpy
+pyttsx3
+gTTS
+googletrans==4.0.0-rc1
+pygame
+protobuf==3.20.3
+kagglehub
+pandas
+scikit-learn

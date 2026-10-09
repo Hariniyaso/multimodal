@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Dashboard - Simple UI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Core Dashboard</h1>
+        </header>
+        
+        <main class="dashboard">
+            <!-- Video Display Region -->
+            <section class="video-section">
+                <img id="video-stream" src="{{ url_for('video_feed') }}" alt="Camera Stream goes here">
+            </section>
+            
+            <!-- Controls Region -->
+            <aside class="controls">
+                
+                <div class="control-panel">
+                    <h3>Camera Output Controls</h3>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="toggleCamera('start')">Start Camera</button>
+                        <button class="btn btn-danger" onclick="toggleCamera('stop')">Stop Camera</button>
+                    </div>
+                </div>
+
+                <div class="control-panel">
+                    <h3>Machine Learning Module</h3>
+                    <select id="module-select" onchange="setMode(this.value)">
+                        <option value="object_detection">Active: Object Detection</option>
+                        <option value="gesture_recognition">Active: Sign Language Recognition</option>
+                    </select>
+                </div>
+
+                <div class="control-panel">
+                    <h3>Language Selection (Output)</h3>
+                    <select id="language-select" onchange="setLanguage(this.value)">
+                        <option value="en">English (US)</option>
+                        <option value="hi">Hindi / हिंदी (HI)</option>
+                        <option value="ta">Tamil / தமிழ் (TA)</option>
+                    </select>
+                </div>
+                
+                <div class="control-panel">
+                    <h3>Live Output Display</h3>
+                    <div id="ai-output" class="output-box">Waiting for stream data...</div>
+                </div>
+
+            </aside>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

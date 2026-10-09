@@ -1,0 +1,8 @@
+opencv-python
+mediapipe
+tensorflow
+pyttsx3
+numpy
+pandas
+scikit-learn
+kagglehub
